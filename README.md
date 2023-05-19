@@ -9,58 +9,28 @@
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ejemplo basico de como utilizar Laravel sail.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel Sail es una herramienta incluida en el framework de Laravel que proporciona 
+un entorno de desarrollo local ligero y rápido para proyectos Laravel. 
+Sail está diseñado para facilitar la configuración y ejecución de aplicaciones
+ Laravel en contenedores Docker.
+ 
+ Al utilizar Laravel Sail, puedes crear rápidamente un entorno de desarrollo 
+local consistente y reproducible para tu aplicación Laravel, sin la necesidad de configurar 
+manualmente el entorno, las dependencias y los servicios relacionados.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Para crear un proyecto de laravel sail es necesario este comando:  curl -s "https://laravel.build/laravel-sail" | bash
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Comandos basicos de laravel sail
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+./vendor/bin/sail up: Este comando inicia los contenedores Docker para tu proyecto Laravel. Inicia los servicios necesarios, como el servidor web, la base de datos y otros servicios configurados en tu entorno.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+./vendor/bin/sail down: Este comando detiene y elimina los contenedores Docker asociados a tu proyecto Laravel. Utilízalo cuando desees detener el entorno de desarrollo local.
 
-## Laravel Sponsors
+./vendor/bin/sail artisan: Puedes utilizar este comando para ejecutar los comandos Artisan de Laravel dentro del contenedor Docker. Por ejemplo, para ejecutar las migraciones de la base de datos: ./vendor/bin/sail artisan migrate.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+./vendor/bin/sail shell: Este comando te permite acceder al shell del contenedor principal de Sail, lo que te brinda acceso a una terminal dentro del contenedor Docker. Puedes utilizar este comando para ejecutar comandos personalizados o interactuar con el entorno de desarrollo.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+./vendor/bin/sail npm: Si tu proyecto utiliza npm para la gestión de paquetes JavaScript, puedes utilizar este comando para ejecutar comandos npm dentro del contenedor Docker. Por ejemplo, para instalar las dependencias JavaScript: ./vendor/bin/sail npm install.
